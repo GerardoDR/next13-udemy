@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const RestaurantDetailsPage = () => {
@@ -35,8 +36,8 @@ const RestaurantDetailsPage = () => {
                     <div className="bg-white w-[70%] rounded p-3 shadow">
                         {/* RESAURANT NAVBAR */}
                         <nav className="flex text-reg border-b pb-2">
-                            <a href="" className="mr-7"> Overview </a>
-                            <a href="" className="mr-7"> Menu </a>
+                            <Link href="/restaurant/milestone-grill" className="mr-7"> Overview </Link>
+                            <Link href="/restaurant/milestone-grill/menu" className="mr-7"> Menu </Link>
                         </nav>
                         {/* RESAURANT NAVBAR */} {/* TITLE */}
                         <div className="mt-4 border-b pb-6">
