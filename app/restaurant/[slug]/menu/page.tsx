@@ -6,7 +6,7 @@ const RestaurantMenuPage = () => {
   return (
     <>
       <div className="bg-white w-[100%] rounded p-3 shadow">
-        <RestaurantNavbar />
+        <RestaurantNavbar slug='lalala'/>
         <Menu />
       </div>
     </>

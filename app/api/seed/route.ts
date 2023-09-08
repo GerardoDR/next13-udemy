@@ -1318,5 +1318,5 @@ export async function GET() {
   //     ],
   //   });
 
-  return NextResponse.json({ name: "hello" });
+  return new Response(JSON.stringify({ name: "hello" }));
 }

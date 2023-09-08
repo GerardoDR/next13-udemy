@@ -2,21 +2,25 @@ import RestaurantHeader from './components/RestaurantHeader'
 import type { Metadata, ResolvingMetadata } from 'next'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
+
+//static metadata
 // export const metadata: Metadata = {
 //   title: `Restaurant`,
 //   description: 'Layout Test',
 // }
+//
+
 type Props = {
     params: { slug: string }
     searchParams: { [key: string]: string | string[] | undefined }
+    children: React.ReactNode
 }
+
+//dynamic metadata
 export async function generateMetadata(
     { params, searchParams }: Props,
     parent: ResolvingMetadata
 ): Promise<Metadata> {
-    console.log(params);
-    console.log(searchParams);
-    
     // read route params
     const slug = params.slug
     // fetch data
@@ -28,11 +32,11 @@ export async function generateMetadata(
 }
 
 
-const RestaurantLayout = ({ children, params, searchParams }: { children: React.ReactNode, params: Props, searchParams: Props }) =>{
-// const RestaurantLayout = ({ children }: { children: React.ReactNode }) => {
+const RestaurantLayout = ({ children, params, searchParams }: Props) => {
+    // const RestaurantLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <main>
-            <RestaurantHeader />
+            <RestaurantHeader name={params.slug}/>
             <div className="flex m-auto w-2/3 justify-between items-start 0 -mt-11">
                 {children}
             </div>
