@@ -55,7 +55,7 @@ const RestaurantDetailsPage = async ({
                 <RestaurantImages images={restaurant.images} />
                 <Reviews />
             </div>
-            <div className="w-[30%] relative text-reg shadow">
+            <div className="w-[25%] relative text-reg shadow">
                 <ReservationsCard />
             </div>
         </>

@@ -1,8 +1,31 @@
 import SearchHeader from './components/SearchHeader'
 import SearchSideBar from './components/SearchSideBar'
 import SearchRestaurantCard from './components/SearchRestaurantCard'
+import { PrismaClient, Restaurant } from '@prisma/client'
 
-const SearchPage = () => {
+type Props = {
+    searchParams: { [key: string]: string | string[] | undefined }
+}
+
+const prisma = new PrismaClient();
+
+// const fetchRestaurantsByQuery = async({ searchParams }: Props): Promise<Restaurant[]> => {
+//     if (searchParams.city) {
+//         const location = searchParams.city
+//         const restaurantsByLocation = await prisma.restaurant.findMany({
+//             where: {
+//                 location: {
+//                     name: `${location}`
+//                 }
+//             },
+//         })
+//         return restaurantsByLocation
+//     }
+//     return
+// }
+
+const SearchPage = ({ searchParams }: Props) => {
+    // const restaurantsFound = fetchRestaurantsByQuery(searchParams)
     return (
         <>
             <SearchHeader />

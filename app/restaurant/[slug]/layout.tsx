@@ -37,7 +37,7 @@ const RestaurantLayout = ({ children, params, searchParams }: Props) => {
     return (
         <main>
             <RestaurantHeader name={params.slug}/>
-            <div className="flex m-auto w-2/3 justify-between items-start 0 -mt-11">
+            <div className="flex m-auto w-2/3  items-start 0 -mt-20">
                 {children}
             </div>
         </main>
