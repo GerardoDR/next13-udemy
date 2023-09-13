@@ -41,6 +41,7 @@ const SearchSideBar = async ({ locations, cuisines, initialQuery }: { locations:
                             href={{ pathname: '/search', query: {...searchParams, city: location.name }}
                             si... mucha bronca
                             si ya tenía city, lo reemplaza, sino lo agrega
+                            
                             */}
                         </Link>
                     )
