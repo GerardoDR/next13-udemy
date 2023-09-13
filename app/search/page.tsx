@@ -9,23 +9,28 @@ type Props = {
 
 const prisma = new PrismaClient();
 
-// const fetchRestaurantsByQuery = async({ searchParams }: Props): Promise<Restaurant[]> => {
-//     if (searchParams.city) {
-//         const location = searchParams.city
-//         const restaurantsByLocation = await prisma.restaurant.findMany({
-//             where: {
-//                 location: {
-//                     name: `${location}`
-//                 }
-//             },
-//         })
-//         return restaurantsByLocation
-//     }
-//     return
-// }
+const fetchRestaurantsByQuery = async ({ searchParams }: { searchParams: Props }): Promise<Restaurant[]> => {
+    console.log(searchParams);
+    // if (searchParams.city) {
 
-const SearchPage = ({ searchParams }: Props) => {
+    //     const restaurantsByLocation = await prisma.restaurant.findMany({
+    //         where: {
+    //             location: {
+    //                 name: {
+    //                     contains: `${searchParams.city}`
+    //                 }
+    //             }
+    //         },
+    //     })
+    //     return restaurantsByLocation
+    // }
+    throw new Error('No location provided')
+}
+
+const SearchPage = ({ searchParams }: { searchParams: Props }) => {
     // const restaurantsFound = fetchRestaurantsByQuery(searchParams)
+    fetchRestaurantsByQuery(searchParams)
+
     return (
         <>
             <SearchHeader />
