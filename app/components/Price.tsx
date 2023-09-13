@@ -10,7 +10,7 @@ const Price = ({ price }: { price: PRICE }) => {
             case PRICE.REGULAR:
                 return (<><span>$$$</span><span className='text-gray-400'>$</span></>)
             default:
-                return (<><span>$$$$</span><span className='text-gray-400'>$$</span></>)
+                return (<span>$$$$</span>)
         }
     }
 
