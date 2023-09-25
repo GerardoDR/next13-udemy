@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { SearchParams } from '../page'
 
-const filters = ['city', 'cuisine', 'price']
+// const filters = ['city', 'cuisine', 'price']
 
 const getQueryKeys = (initialQuery: SearchParams) => Object.keys(initialQuery)
 
@@ -36,7 +36,6 @@ const SearchSideBar = async ({ locations, cuisines, initialQuery }: { locations:
                             <p className="font-light text-reg capitalize">{location.name}</p>
                             {/* ALTERNATIVA DE RESOLUCION 
                             href={{ pathname: '/search', query: {...searchParams, city: location.name }}
-                            si... mucha bronca
                             si ya tenía city, lo reemplaza, sino lo agrega
                             */}
                         </Link>
@@ -53,17 +52,17 @@ const SearchSideBar = async ({ locations, cuisines, initialQuery }: { locations:
             </div>
             <div className="mt-3 pb-4">
                 <h1 className="mb-2">Price</h1>
-                <div className="flex text-center">
-                    <Link href={{ pathname: '/search', query: queryBuilder(initialQuery, qKeys, 'price', 'CHEAP') }}
+                <div className="flex">
+                    <Link href={{ pathname: '/search', query: queryBuilder(initialQuery, qKeys, 'price', PRICE.CHEAP) }}
                         className="border w-full text-reg font-light rounded-l p-2">
                         $$
                     </Link>
-                    <Link href={{ pathname: '/search', query: queryBuilder(initialQuery, qKeys, 'price', 'REGULAR') }}
+                    <Link href={{ pathname: '/search', query: queryBuilder(initialQuery, qKeys, 'price', PRICE.REGULAR) }}
                         className="border-r border-t border-b w-full text-reg font-light p-2"
                     >
                         $$$
                     </Link>
-                    <Link href={{ pathname: '/search', query: queryBuilder(initialQuery, qKeys, 'price', 'EXPENSIVE') }}
+                    <Link href={{ pathname: '/search', query: queryBuilder(initialQuery, qKeys, 'price', PRICE.EXPENSIVE) }}
                         className="border-r border-t border-b w-full text-reg font-light p-2 rounded-r"
                     >
                         $$$$

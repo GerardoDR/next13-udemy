@@ -23,15 +23,13 @@ const select = {
     cuisine: true,
     location: true,
     price: true,
-    slug: true
+    slug: true,
+    reviews: true
 }
 
 const fetchRestaurantsByQuery = (searchParams: SearchParams) => {
-
     if (!searchParams.city && !searchParams.cuisine && !searchParams.price) return prisma.restaurant.findMany({ select })
-
     const where: SearchBarQuery = {/* */}
-
     if (searchParams.city) {
         const location = {
             name: {
@@ -52,7 +50,6 @@ const fetchRestaurantsByQuery = (searchParams: SearchParams) => {
         const price = { equals: searchParams.price }
         where.price = price
     }
-    
     return prisma.restaurant.findMany({
         where,
         select

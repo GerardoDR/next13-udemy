@@ -1,8 +1,11 @@
 import Price from '@/app/components/Price';
+import Stars from '@/app/components/Stars';
+import { RestaurantCardType } from '@/app/page';
 import Link from 'next/link'
 import React from 'react'
 
-const SearchRestaurantCard = ({ restaurant }: any) => {
+
+const SearchRestaurantCard = ({ restaurant }: { restaurant: RestaurantCardType }) => {
     return (
         <div className="border-b flex pb-5 ml-4">
             <img
@@ -13,12 +16,14 @@ const SearchRestaurantCard = ({ restaurant }: any) => {
             <div className="pl-5">
                 <h2 className="text-3xl">{restaurant.name}</h2>
                 <div className="flex items-start">
-                    <div className="flex mb-2">*****</div>
+                    <div className="mb-2">
+                        <Stars reviews={restaurant.reviews} />
+                    </div>
                     <p className="ml-2 text-sm">Awesome</p>
                 </div>
                 <div className="mb-9">
                     <div className="font-light flex text-reg">
-                        <Price price={restaurant.price}/>
+                        <Price price={restaurant.price} />
                         <p className="mr-4 capitalize">{restaurant.cuisine.name}</p>
                         <p className="mr-4 capitalize">{restaurant.location.name}</p>
                     </div>
